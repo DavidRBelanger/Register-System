@@ -15,6 +15,7 @@ public class Transaction {
     private Double totalPrice;
     private int itemCount;
     private double tax;
+    private String paymentType;
 
     public Transaction() {
         itemList = new ArrayList<Item>();
@@ -51,6 +52,16 @@ public class Transaction {
     public void addTransactionDiscount(double disc) { //disc should be a number between 0 and 1. if you want a 10% discount, .1 would be entered.
         totalPrice = totalPrice * (1 - disc);
     }
+
+    public void setTransactionType(String str) {
+        paymentType = str;
+    }
+
+    public String getTransactionType() {
+        return paymentType;
+    }
+    
+    
     
     
 
