@@ -1,14 +1,7 @@
 
 import java.util.ArrayList;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-/**
- *
- * @author drbx3
- */
+
 public class Transaction {
 
     private ArrayList itemList;
@@ -61,6 +54,9 @@ public class Transaction {
         return paymentType;
     }
     
+    public double getPrice() {
+        return totalPrice;
+    }
     
     
     
