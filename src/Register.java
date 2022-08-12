@@ -25,25 +25,173 @@ public class Register extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jButton4 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
+        jTextField1 = new javax.swing.JTextField();
+        tenderButton = new javax.swing.JButton();
+        discButton = new javax.swing.JButton();
+        voidItem = new javax.swing.JButton();
+        subtotalText = new javax.swing.JTextField();
+        subtotalText1 = new javax.swing.JTextField();
+        subtotalField = new javax.swing.JTextField();
+        totalField = new javax.swing.JTextField();
+        addItem = new javax.swing.JButton();
+        taxButton = new javax.swing.JButton();
+        cancelButton = new javax.swing.JButton();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        jButton4.setText("Void Item");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1280, 720));
+        getContentPane().setLayout(null);
+
+        jScrollPane1.setViewportView(jList1);
+
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(0, 30, 480, 690);
+
+        jTextField1.setEditable(false);
+        jTextField1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        jTextField1.setText("Num             Department      Name            Style           Subtotal        Total           ");
+        getContentPane().add(jTextField1);
+        jTextField1.setBounds(0, 0, 480, 30);
+
+        tenderButton.setText("Tender Transaction");
+        tenderButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tenderButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(tenderButton);
+        tenderButton.setBounds(480, 510, 200, 70);
+
+        discButton.setText("Transaction Discount");
+        discButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                discButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(discButton);
+        discButton.setBounds(480, 440, 200, 70);
+
+        voidItem.setText("Void Item");
+        voidItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                voidItemActionPerformed(evt);
+            }
+        });
+        getContentPane().add(voidItem);
+        voidItem.setBounds(480, 370, 200, 70);
+
+        subtotalText.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        subtotalText.setText("Subtotal:");
+        subtotalText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                subtotalTextActionPerformed(evt);
+            }
+        });
+        getContentPane().add(subtotalText);
+        subtotalText.setBounds(470, 0, 210, 30);
+
+        subtotalText1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        subtotalText1.setText("Total::");
+        subtotalText1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                subtotalText1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(subtotalText1);
+        subtotalText1.setBounds(480, 120, 200, 30);
+
+        subtotalField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        getContentPane().add(subtotalField);
+        subtotalField.setBounds(480, 30, 200, 90);
+
+        totalField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        getContentPane().add(totalField);
+        totalField.setBounds(480, 150, 200, 90);
+
+        addItem.setText("Add Item");
+        addItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addItemActionPerformed(evt);
+            }
+        });
+        getContentPane().add(addItem);
+        addItem.setBounds(480, 300, 200, 70);
+
+        taxButton.setText("Add Item");
+        taxButton.setActionCommand("Set Tax");
+        taxButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                taxButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(taxButton);
+        taxButton.setBounds(480, 580, 200, 70);
+
+        cancelButton.setText("Cancel Transaction");
+        cancelButton.setActionCommand("Set Tax");
+        cancelButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cancelButton);
+        cancelButton.setBounds(480, 650, 200, 70);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void tenderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tenderButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tenderButtonActionPerformed
+
+    private void discButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_discButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_discButtonActionPerformed
+
+    private void voidItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voidItemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_voidItemActionPerformed
+
+    private void subtotalTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subtotalTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_subtotalTextActionPerformed
+
+    private void subtotalText1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subtotalText1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_subtotalText1ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void addItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addItemActionPerformed
+        if (!hasStarted) {
+            list = new Transaction();
+        }
+    }//GEN-LAST:event_addItemActionPerformed
+
+    private void taxButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_taxButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_taxButtonActionPerformed
+
+    private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
+        hasStarted = false;
+    }//GEN-LAST:event_cancelButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
+    public boolean hasStarted=false;
+    public Transaction list;
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -77,5 +225,19 @@ public class Register extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addItem;
+    private javax.swing.JButton cancelButton;
+    private javax.swing.JButton discButton;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JList<String> jList1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField subtotalField;
+    private javax.swing.JTextField subtotalText;
+    private javax.swing.JTextField subtotalText1;
+    private javax.swing.JButton taxButton;
+    private javax.swing.JButton tenderButton;
+    private javax.swing.JTextField totalField;
+    private javax.swing.JButton voidItem;
     // End of variables declaration//GEN-END:variables
 }
