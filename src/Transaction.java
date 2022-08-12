@@ -58,6 +58,20 @@ public class Transaction {
         return totalPrice;
     }
     
+    public int count() {
+        return itemCount;
+    }
+    
+    
+    public String toString(int index) {
+        Item a = (Item) itemList.get(index);
+        String str = a.getDepartment() + "/t/t";
+        str += a.getName() + "/t/t";
+        str += a.getStyle() + "/t/t";
+        str += a.getPrice() + "/t/t";
+        str += a.getTaxedPrice(tax) + "/t/t";
+        return str;
+    }
     
     
 

@@ -15,6 +15,12 @@ public class Item {
     public Item(String nm) {
         itemName = nm;
     }
+    public Item(String nm, int style, int depart, double price) {
+        itemName = nm;
+        styleNum = style;
+        departmentNum = depart;
+        this.price = price;
+    }
 
     public void setName(String nm) {
         itemName = nm;

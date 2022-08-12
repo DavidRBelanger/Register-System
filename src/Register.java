@@ -1,3 +1,6 @@
+
+import java.util.ArrayList;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -26,6 +29,7 @@ public class Register extends javax.swing.JFrame {
     private void initComponents() {
 
         jButton4 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
         jTextField1 = new javax.swing.JTextField();
@@ -39,6 +43,16 @@ public class Register extends javax.swing.JFrame {
         addItem = new javax.swing.JButton();
         taxButton = new javax.swing.JButton();
         cancelButton = new javax.swing.JButton();
+        deptArea = new javax.swing.JTextField();
+        nameArea = new javax.swing.JTextField();
+        styleArea = new javax.swing.JTextField();
+        priceArea = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        voidIndexField = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
 
         jButton4.setText("Void Item");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -46,6 +60,9 @@ public class Register extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
+
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Department");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1280, 720));
@@ -69,7 +86,7 @@ public class Register extends javax.swing.JFrame {
             }
         });
         getContentPane().add(tenderButton);
-        tenderButton.setBounds(480, 510, 200, 70);
+        tenderButton.setBounds(480, 480, 200, 80);
 
         discButton.setText("Transaction Discount");
         discButton.addActionListener(new java.awt.event.ActionListener() {
@@ -78,7 +95,7 @@ public class Register extends javax.swing.JFrame {
             }
         });
         getContentPane().add(discButton);
-        discButton.setBounds(480, 440, 200, 70);
+        discButton.setBounds(480, 400, 200, 80);
 
         voidItem.setText("Void Item");
         voidItem.addActionListener(new java.awt.event.ActionListener() {
@@ -87,8 +104,9 @@ public class Register extends javax.swing.JFrame {
             }
         });
         getContentPane().add(voidItem);
-        voidItem.setBounds(480, 370, 200, 70);
+        voidItem.setBounds(480, 320, 200, 80);
 
+        subtotalText.setEditable(false);
         subtotalText.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         subtotalText.setText("Subtotal:");
         subtotalText.addActionListener(new java.awt.event.ActionListener() {
@@ -99,6 +117,7 @@ public class Register extends javax.swing.JFrame {
         getContentPane().add(subtotalText);
         subtotalText.setBounds(470, 0, 210, 30);
 
+        subtotalText1.setEditable(false);
         subtotalText1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         subtotalText1.setText("Total::");
         subtotalText1.addActionListener(new java.awt.event.ActionListener() {
@@ -107,15 +126,17 @@ public class Register extends javax.swing.JFrame {
             }
         });
         getContentPane().add(subtotalText1);
-        subtotalText1.setBounds(480, 120, 200, 30);
+        subtotalText1.setBounds(480, 100, 200, 30);
 
+        subtotalField.setEditable(false);
         subtotalField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         getContentPane().add(subtotalField);
-        subtotalField.setBounds(480, 30, 200, 90);
+        subtotalField.setBounds(480, 30, 200, 70);
 
+        totalField.setEditable(false);
         totalField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         getContentPane().add(totalField);
-        totalField.setBounds(480, 150, 200, 90);
+        totalField.setBounds(480, 130, 200, 70);
 
         addItem.setText("Add Item");
         addItem.addActionListener(new java.awt.event.ActionListener() {
@@ -124,7 +145,7 @@ public class Register extends javax.swing.JFrame {
             }
         });
         getContentPane().add(addItem);
-        addItem.setBounds(480, 300, 200, 70);
+        addItem.setBounds(480, 240, 200, 80);
 
         taxButton.setText("Add Item");
         taxButton.setActionCommand("Set Tax");
@@ -134,7 +155,7 @@ public class Register extends javax.swing.JFrame {
             }
         });
         getContentPane().add(taxButton);
-        taxButton.setBounds(480, 580, 200, 70);
+        taxButton.setBounds(480, 560, 200, 80);
 
         cancelButton.setText("Cancel Transaction");
         cancelButton.setActionCommand("Set Tax");
@@ -144,7 +165,60 @@ public class Register extends javax.swing.JFrame {
             }
         });
         getContentPane().add(cancelButton);
-        cancelButton.setBounds(480, 650, 200, 70);
+        cancelButton.setBounds(480, 640, 200, 80);
+
+        deptArea.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deptAreaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(deptArea);
+        deptArea.setBounds(680, 240, 70, 19);
+
+        nameArea.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nameAreaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(nameArea);
+        nameArea.setBounds(680, 260, 70, 19);
+
+        styleArea.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                styleAreaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(styleArea);
+        styleArea.setBounds(680, 280, 70, 19);
+        getContentPane().add(priceArea);
+        priceArea.setBounds(680, 300, 70, 19);
+
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Price");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(730, 300, 80, 15);
+
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Department");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(740, 240, 80, 15);
+
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Name");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(750, 260, 40, 15);
+
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Style");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(740, 280, 60, 15);
+        getContentPane().add(voidIndexField);
+        voidIndexField.setBounds(680, 320, 70, 80);
+
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("Index");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(760, 320, 26, 80);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -177,6 +251,14 @@ public class Register extends javax.swing.JFrame {
         if (!hasStarted) {
             list = new Transaction();
         }
+        Item a = new Item(nameArea.getText(), Integer.valueOf(deptArea.getText()), Integer.valueOf(styleArea.getText()), Integer.valueOf(priceArea.getText()));
+        list.addItem(a);
+        ArrayList arr = new ArrayList<String>();
+        for (int i =0; i < list.count(); i++) {
+            arr.add(list.toString(i));
+        }
+        jList1 = new Jlist(arr.toArray());
+        
     }//GEN-LAST:event_addItemActionPerformed
 
     private void taxButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_taxButtonActionPerformed
@@ -186,6 +268,18 @@ public class Register extends javax.swing.JFrame {
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
         hasStarted = false;
     }//GEN-LAST:event_cancelButtonActionPerformed
+
+    private void nameAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameAreaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nameAreaActionPerformed
+
+    private void styleAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_styleAreaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_styleAreaActionPerformed
+
+    private void deptAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deptAreaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deptAreaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -227,17 +321,28 @@ public class Register extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addItem;
     private javax.swing.JButton cancelButton;
+    private javax.swing.JTextField deptArea;
     private javax.swing.JButton discButton;
     private javax.swing.JButton jButton4;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField nameArea;
+    private javax.swing.JTextField priceArea;
+    private javax.swing.JTextField styleArea;
     private javax.swing.JTextField subtotalField;
     private javax.swing.JTextField subtotalText;
     private javax.swing.JTextField subtotalText1;
     private javax.swing.JButton taxButton;
     private javax.swing.JButton tenderButton;
     private javax.swing.JTextField totalField;
+    private javax.swing.JTextField voidIndexField;
     private javax.swing.JButton voidItem;
     // End of variables declaration//GEN-END:variables
 }
