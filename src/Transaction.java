@@ -65,11 +65,11 @@ public class Transaction {
     
     public String toString(int index) {
         Item a = (Item) itemList.get(index);
-        String str = a.getDepartment() + "/t/t";
-        str += a.getName() + "/t/t";
-        str += a.getStyle() + "/t/t";
-        str += a.getPrice() + "/t/t";
-        str += a.getTaxedPrice(tax) + "/t/t";
+        String str = a.getDepartment() + "\t";
+        str += a.getName() + "\t";
+        str += a.getStyle() + "\t";
+        str += a.getPrice() + "\t";
+        str += a.getTaxedPrice(tax) + "\t";
         return str;
     }
     

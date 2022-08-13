@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -30,8 +31,6 @@ public class Register extends javax.swing.JFrame {
 
         jButton4 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
         jTextField1 = new javax.swing.JTextField();
         tenderButton = new javax.swing.JButton();
         discButton = new javax.swing.JButton();
@@ -53,6 +52,10 @@ public class Register extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         voidIndexField = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        transArea = new javax.swing.JTextArea();
+        cashButton = new javax.swing.JRadioButton();
+        creditButton = new javax.swing.JRadioButton();
 
         jButton4.setText("Void Item");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -67,11 +70,6 @@ public class Register extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(null);
-
-        jScrollPane1.setViewportView(jList1);
-
-        getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(0, 30, 480, 690);
 
         jTextField1.setEditable(false);
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
@@ -173,7 +171,7 @@ public class Register extends javax.swing.JFrame {
             }
         });
         getContentPane().add(deptArea);
-        deptArea.setBounds(680, 240, 70, 19);
+        deptArea.setBounds(680, 240, 70, 40);
 
         nameArea.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -181,7 +179,7 @@ public class Register extends javax.swing.JFrame {
             }
         });
         getContentPane().add(nameArea);
-        nameArea.setBounds(680, 260, 70, 19);
+        nameArea.setBounds(680, 280, 70, 40);
 
         styleArea.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -189,29 +187,29 @@ public class Register extends javax.swing.JFrame {
             }
         });
         getContentPane().add(styleArea);
-        styleArea.setBounds(680, 280, 70, 19);
+        styleArea.setBounds(820, 240, 70, 40);
         getContentPane().add(priceArea);
-        priceArea.setBounds(680, 300, 70, 19);
+        priceArea.setBounds(820, 280, 70, 40);
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Price");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(730, 300, 80, 15);
+        jLabel1.setBounds(890, 280, 60, 40);
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Department");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(740, 240, 80, 15);
+        jLabel3.setBounds(740, 240, 80, 40);
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Name");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(750, 260, 40, 15);
+        jLabel4.setBounds(750, 280, 40, 40);
 
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Style");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(740, 280, 60, 15);
+        jLabel5.setBounds(890, 240, 60, 40);
         getContentPane().add(voidIndexField);
         voidIndexField.setBounds(680, 320, 70, 80);
 
@@ -219,6 +217,21 @@ public class Register extends javax.swing.JFrame {
         jLabel6.setText("Index");
         getContentPane().add(jLabel6);
         jLabel6.setBounds(760, 320, 26, 80);
+
+        transArea.setColumns(20);
+        transArea.setRows(5);
+        jScrollPane2.setViewportView(transArea);
+
+        getContentPane().add(jScrollPane2);
+        jScrollPane2.setBounds(0, 30, 480, 690);
+
+        cashButton.setText("Cash");
+        getContentPane().add(cashButton);
+        cashButton.setBounds(680, 490, 90, 30);
+
+        creditButton.setText("Credit");
+        getContentPane().add(creditButton);
+        creditButton.setBounds(680, 520, 90, 30);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -251,13 +264,15 @@ public class Register extends javax.swing.JFrame {
         if (!hasStarted) {
             list = new Transaction();
         }
-        Item a = new Item(nameArea.getText(), Integer.valueOf(deptArea.getText()), Integer.valueOf(styleArea.getText()), Integer.valueOf(priceArea.getText()));
+        Item a = new Item(nameArea.getText(), Integer.valueOf(deptArea.getText()), Integer.valueOf(styleArea.getText()), Double.valueOf(priceArea.getText()));
         list.addItem(a);
-        ArrayList arr = new ArrayList<String>();
+        transArea.setText("");
         for (int i =0; i < list.count(); i++) {
-            arr.add(list.toString(i));
+            transArea.append(list.toString(i) + "\n");
         }
-        jList1 = new Jlist(arr.toArray());
+        hasStarted = true;
+        double subtotal = 0;
+        double total = 0;
         
     }//GEN-LAST:event_addItemActionPerformed
 
@@ -267,6 +282,7 @@ public class Register extends javax.swing.JFrame {
 
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
         hasStarted = false;
+        transArea.setText("");
     }//GEN-LAST:event_cancelButtonActionPerformed
 
     private void nameAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameAreaActionPerformed
@@ -321,6 +337,8 @@ public class Register extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addItem;
     private javax.swing.JButton cancelButton;
+    private javax.swing.JRadioButton cashButton;
+    private javax.swing.JRadioButton creditButton;
     private javax.swing.JTextField deptArea;
     private javax.swing.JButton discButton;
     private javax.swing.JButton jButton4;
@@ -330,8 +348,7 @@ public class Register extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JList<String> jList1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField nameArea;
     private javax.swing.JTextField priceArea;
@@ -342,6 +359,7 @@ public class Register extends javax.swing.JFrame {
     private javax.swing.JButton taxButton;
     private javax.swing.JButton tenderButton;
     private javax.swing.JTextField totalField;
+    private javax.swing.JTextArea transArea;
     private javax.swing.JTextField voidIndexField;
     private javax.swing.JButton voidItem;
     // End of variables declaration//GEN-END:variables
