@@ -1,12 +1,16 @@
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
 import javax.swing.DefaultComboBoxModel;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
 /**
  *
  * @author drbx3
@@ -237,7 +241,18 @@ public class Register extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void tenderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tenderButtonActionPerformed
-        // TODO add your handling code here:
+        try {
+            myObj = new File("transactions.txt");
+            FileWriter fw = new FileWriter("transactions.txt");
+            fw.write("\n" + transactionNumber + "\n");
+            for (int i = 0; i < list.count(); i++) {
+                fw.write(list.toString(i) + "\n"); //code for now just write item details
+
+            }
+        } catch (IOException e) {
+            System.out.println("An Error has occured.");
+            e.printStackTrace();
+        }
     }//GEN-LAST:event_tenderButtonActionPerformed
 
     private void discButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_discButtonActionPerformed
@@ -263,17 +278,35 @@ public class Register extends javax.swing.JFrame {
     private void addItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addItemActionPerformed
         if (!hasStarted) {
             list = new Transaction();
+            String data = "";
+            try {
+                File file = new File("transactions.txt");
+                Scanner myReader = new Scanner(file);
+                data = "";
+                while (myReader.hasNextLine()) {
+                    data += myReader.nextLine() + "\n";
+                }
+            } catch (FileNotFoundException e) {
+            }
+            while (true) {
+                int a = data.indexOf("#");
+                if (data.indexOf("#", a+1) == -1) {
+                    transactionIndex = a;
+                    break;
+                }
+            }
+
         }
         Item a = new Item(nameArea.getText(), Integer.valueOf(deptArea.getText()), Integer.valueOf(styleArea.getText()), Double.valueOf(priceArea.getText()));
         list.addItem(a);
         transArea.setText("");
-        for (int i =0; i < list.count(); i++) {
+        for (int i = 0; i < list.count(); i++) {
             transArea.append(list.toString(i) + "\n");
         }
         hasStarted = true;
         double subtotal = 0;
         double total = 0;
-        
+
     }//GEN-LAST:event_addItemActionPerformed
 
     private void taxButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_taxButtonActionPerformed
@@ -300,8 +333,12 @@ public class Register extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public boolean hasStarted=false;
+    public boolean hasStarted = false;
     public Transaction list;
+    public int transactionNumber;
+    public File myObj;
+    public int transactionIndex;
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
